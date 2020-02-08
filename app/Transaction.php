@@ -23,11 +23,11 @@ class Transaction extends Model
     public function buyer()
     {
         # code...
-        return $this->belongsToMany(Buyer::class);
+        return $this->belongsTo(Buyer::class);
     }
     public function product()
     {
         # code...
-        return $this->belongsToMany(Product::class);
+        return $this->belongsTo(Product::class);
     }
 }
