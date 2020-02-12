@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use App\Seller;
 use App\Transaction;
+use App\Transformers\ProductTransformer;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
@@ -16,6 +17,8 @@ class Product extends Model
     protected $dates =['deleted_at'];
     const AVAILABLE_PRODUCT ='available';
     const UNAVAILABLE_PRODUCT ='unavailable';
+    public $transformer = ProductTransformer::class;
+
     protected $fillable =[
         'name',
         'description',
